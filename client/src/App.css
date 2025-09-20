@@ -1,0 +1,90 @@
+*
+{
+  margin:0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body
+{
+  background: linear-gradient(135deg, #1c1c2b, #2d2d44);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.container
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.container .form_box
+{
+  background: #25253a;
+  padding: 40px;
+  border-radius:20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: 0.4s;
+  color: #fff;
+  position: relative;
+}
+
+.container .form_box h2
+{
+    text-align: center;
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    color: #00cec9;
+}
+
+.container .form_box input
+{
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #2f2f46;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.container .form_box input:focus
+{
+  background: #3c3c5e;
+}
+
+.container .form_box button
+{
+    padding: 12px;
+    background: #00cec9;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container .form_box .toggle_btn
+{
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.container .form_box .toggle_btn span
+{
+  color: #00cec9;
+  cursor: pointer;
+  margin-left: 5px;
+  font-weight: bold;
+}

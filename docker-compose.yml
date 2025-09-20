@@ -1,0 +1,41 @@
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27018:27017"   # standard Mongo port
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  backend:
+    build: ./server
+    image: myapp-server
+    container_name: backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/mern_auth
+    command: ["node", "index.js"]
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  frontend:
+    build: ./client
+    image: myapp-client
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    command: ["npm", "run", "dev"]
+    networks:
+      - app-network
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
