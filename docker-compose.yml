@@ -9,8 +9,7 @@ services:
     restart: unless-stopped
 
   backend:
-    build: ./server
-    image: myapp-server
+    image: shivamsingh6490/login_form_backend:1.1  # Add this line
     container_name: backend
     ports:
       - "8000:8000"
@@ -24,8 +23,7 @@ services:
     restart: unless-stopped
 
   frontend:
-    build: ./client
-    image: myapp-client
+    image: shivamsingh6490/login_form_frontend:1.1
     container_name: frontend
     ports:
       - "3000:3000"
